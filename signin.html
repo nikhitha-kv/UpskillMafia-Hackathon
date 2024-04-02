@@ -25,26 +25,52 @@
   <i style="--clr:#ff0057;"></i>
   <i style="--clr:#fffd44;"></i>
   <div class="login">
+    <form>
     <h2>Login</h2>
     <div class="inputBx">
-        <input type="text" placeholder="Username">
+        <input type="email" id="email" placeholder="Email Id">
     </div>
     <div class="inputBx">
-        <input type="password" placeholder="Password">
+      <input type="password" id="password" placeholder="Password">
     </div>
     <div class="inputBx">
         <input type="submit" value="Sign in" >
     <div class="links">
       <a href="#">Forget Password</a>
       <a href="signup.html">Signup</a>
-      <a href="#">Skip</a>
       
 
     </div>
+  </form>
   </div>
 </div>
 
 </body>
+<script>
+  const signinForm = document.getElementById('signin-form');
+
+  signinForm.addEventListener('click', async (e) => {
+    e.preventDefault();
+
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    try {
+      const response = await fetch('http://localhost:3000/api/auth/signin', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email, password })
+      });
+
+      const data = await response.json();
+      console.log(data); // Handle the response data as needed
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  });
+</script>
 
 
 </html>
