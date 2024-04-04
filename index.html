@@ -144,6 +144,51 @@
         background: white;
         color: black;
       }
+      @media screen and (max-width: 768px) {
+        /* Adjustments for smaller screens */
+        .menu {
+          padding: 10px;
+        }
+        .menu .logo a {
+          font-size: 30px;
+        }
+        .menu ul {
+          display: none;
+        }
+        .video-container video {
+          object-fit: contain;
+        }
+        .center .title {
+          font-size: 40px;
+        }
+        .center .sub_title {
+          font-size: 35px;
+        }
+        .center .btns button {
+          height: 45px;
+          width: 150px;
+          font-size: 16px;
+        }
+      }
+      
+      @media screen and (max-width: 480px) {
+        /* Further adjustments for even smaller screens */
+        .menu .logo a {
+          font-size: 25px;
+        }
+        .center .title {
+          font-size: 30px;
+        }
+        .center .sub_title {
+          font-size: 25px;
+        }
+        .center .btns button {
+          height: 40px;
+          width: 130px;
+          font-size: 14px;
+        }
+      }
+      
       
       
   </style>

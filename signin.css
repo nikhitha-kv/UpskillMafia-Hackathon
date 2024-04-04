@@ -131,3 +131,23 @@
     min-width: 100%;
     min-height: 100%;
 }
+@media screen and (max-width: 768px) {
+  /* Adjustments for smaller screens */
+  .login {
+    width: 80%;
+    margin: auto;
+  }
+  .inputBx {
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* Further adjustments for even smaller screens */
+  .login {
+    width: 90%;
+  }
+  .inputBx input {
+    width: 100%;
+  }
+}

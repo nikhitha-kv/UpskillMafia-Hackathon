@@ -129,4 +129,15 @@
 .terms-label {
     display: inline-block;
   }
+  @media screen and (max-width: 768px) {
+    .login {
+      width: 90%;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .login {
+      width: 95%;
+    }
+  }
   
