@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Virtual Mentoring Hub</title>
     <link rel="stylesheet" href="details.css">
-    <style>@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
-</style>
-
-
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
+    </style>
 </head>
+
 <body>
     <a href="index.html" style="position: absolute; top: 20px; right: 80px; color: #fff; text-decoration: none; z-index: 999;">Home</a>
     <a href="#" id="backButton" style="position: absolute; top: 20px; right: 150px; color: #fff; text-decoration: none; z-index: 999;">Back</a>
@@ -18,85 +19,100 @@
 
     
     <div class="image-container">
-          <img src="assets/s-d.jpg" alt="bg img">
-          Your browser does not support the video tag.
-  </div>    
+        <img src="assets/s-d.jpg" alt="bg img">
+        Your browser does not support the video tag.
+    </div>
 
-  <div class="login">
-    <form>
-        <h2>Enter Your Details</h2><br/>
-        <div class="inputBx">
-            <input type="text" id="name" placeholder="Name" required>
-        </div>
-        <div class="inputBx">
-            <input type="text" id="age" placeholder="Age" required>
-        </div>
-        <div class="inputBx">
-            <select id="gender" required>
-                <option value="">Select Gender</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="other">Other</option>
-            </select>
-        </div>
-        <div class="inputBx">
-            <input type="text" id="school" placeholder="School/College" required>
-        </div>
-        <div class="inputBx">
-            <input type="text" id="grade" placeholder="Grade/Year" required>
-        </div>
-        <div class="inputBx">
-            <input type="text" id="branch" placeholder="Branch/Field of Study" >
-        </div>
-        <div class="inputBx">
-            <input type="text" id="location" placeholder="Location(Optional)" >
-        </div>
-        
-        <div class="inputBx">
-            <input type="tel" id="phone" placeholder="Phone Number(Optional)" >
-        </div>
-        <div class="inputBx">
-            <label for="terms" class="terms-label" >
-              <input type="checkbox" id="terms" required>
-              I agree to the <a href="#" id="termsLink">terms and conditions</a>
-            </label>
-          </div>
-          
-        <div class="inputBx">
-            <input type="submit" value="Register">
-        </div>
-    </form>
-</div>
+    <div class="login">
+        <form id="registerForm">
+            <h2>Enter Your Details</h2><br />
+            <div class="inputBx">
+                <input type="text" id="name" placeholder="Name" required>
+            </div>
+            <div class="inputBx">
+                <input type="text" id="age" placeholder="Age" required>
+            </div>
+            <div class="inputBx">
+                <select id="gender" required>
+                    <option value="">Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="inputBx">
+                <input type="text" id="school" placeholder="School/College" required>
+            </div>
+            <div class="inputBx">
+                <input type="text" id="grade" placeholder="Grade/Year" required>
+            </div>
+            <div class="inputBx">
+                <input type="text" id="branch" placeholder="Branch/Field of Study">
+            </div>
+            <div class="inputBx">
+                <input type="text" id="location" placeholder="Location(Optional)">
+            </div>
+            
+            <div class="inputBx">
+                <input type="tel" id="phone" placeholder="Phone Number(Optional)">
+            </div>
+            <div class="inputBx">
+                <label for="terms" class="terms-label">
+                    <input type="checkbox" id="terms" required>
+                    I agree to the <a href="#" id="termsLink">terms and conditions</a>
+                </label>
+            </div>
+            
+            <div class="inputBx">
+                <input type="submit" value="Register">
+            </div>
+        </form>
+    </div>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-    var termsLink = document.getElementById("termsLink");
-    var termsText = document.getElementById("termsText");
+    <script>
+        // Add an event listener for form submission
+        document.getElementById("registerForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the default form submission
 
-    termsLink.addEventListener("click", function(event) {
-        event.preventDefault(); // Prevent the default action of the link
-        if (termsText.style.display === "none") {
-            termsText.style.display = "block";
-        } else {
-            termsText.style.display = "none";
-        }
-    });
-});
-document.addEventListener("click", function(event) {
-    var backButton = document.getElementById("backButton");
-    if (event.target === backButton) {
-        event.preventDefault();
-        window.history.back();
-    }
-});
-</script>
+            // Fetch the form data
+            var name = document.getElementById("name").value;
+            var age = document.getElementById("age").value;
+            var gender = document.getElementById("gender").value;
+            var school = document.getElementById("school").value;
+            var grade = document.getElementById("grade").value;
+            var branch = document.getElementById("branch").value;
+            var location = document.getElementById("location").value;
+            var phone = document.getElementById("phone").value;
 
+            // Perform any necessary validation
+            // Here, you can add your validation logic if needed
+
+            // Redirect to the dashboard page
+            window.location.href = "std-dashboard.html";
+        });
+
+        // Add functionality for the back button
+        document.getElementById("backButton").addEventListener("click", function(event) {
+            event.preventDefault();
+            window.history.back();
+        });
+
+        // Toggle display of terms and conditions
+        document.addEventListener("DOMContentLoaded", function() {
+            var termsLink = document.getElementById("termsLink");
+            var termsText = document.getElementById("termsText");
+
+            termsLink.addEventListener("click", function(event) {
+                event.preventDefault(); // Prevent the default action of the link
+                if (termsText.style.display === "none") {
+                    termsText.style.display = "block";
+                } else {
+                    termsText.style.display = "none";
+                }
+            });
+        });
+    </script>
 
 </body>
 
-
-
 </html>
-
-
-

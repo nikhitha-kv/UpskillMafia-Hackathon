@@ -1,64 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Virtual Mentoring Hub</title>
     <link rel="stylesheet" href="signin.css">
-    <style>@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
-</style>
-
-
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
+    </style>
 </head>
+
 <body>
     <a href="index.html" style="position: absolute; top: 20px; right: 80px; color: #ffffff; text-decoration: none; z-index: 999;">Home</a>
     <a href="#" id="backButton" style="position: absolute; top: 20px; right: 150px; color: #fff; text-decoration: none; z-index: 999;">Back</a>
 
-    
-    <div class="image-container">
-      <img src="assets/sign-bg.jpg" alt="bg img">
-      Your browser does not support the video tag.
-</div> 
-    <!--ring div starts here-->
-<div class="ring">
-  <i style="--clr:#00ff0a;"></i>
-  <i style="--clr:#ff0057;"></i>
-  <i style="--clr:#fffd44;"></i>
-  <div class="login">
-    <form>
-    <h2>Student Login</h2><br/>
-    <div class="inputBx">
-        <input type="email" id="email" placeholder="Email-Id">
-    </div><br/>
-    <div class="inputBx">
-      <input type="password" id="password" placeholder="Password">
-    </div><br/>
-    <div class="inputBx">
-        <input type="submit" value="Sign in" ><br/>
-    <div class="links">
-      <a href="#">Forget Password</a>
-      <a href="s-signup.html">Signup</a>
-      
 
+    <div class="image-container">
+        <img src="assets/sign-bg.jpg" alt="bg img">
+        Your browser does not support the video tag.
     </div>
-  </form>
-  </div>
-</div>
-<script>
-  document.addEventListener("click", function(event) {
-    var backButton = document.getElementById("backButton");
-    if (event.target === backButton) {
-        event.preventDefault();
-        window.history.back();
-    }
-});
-</script>
+    <!--ring div starts here-->
+    <div class="ring">
+        <i style="--clr:#00ff0a;"></i>
+        <i style="--clr:#ff0057;"></i>
+        <i style="--clr:#fffd44;"></i>
+        <div class="login">
+            <form id="loginForm">
+                <h2>Student Login</h2><br />
+                <div class="inputBx">
+                    <input type="email" id="email" placeholder="Email-Id">
+                </div><br />
+                <div class="inputBx">
+                    <input type="password" id="password" placeholder="Password">
+                </div><br />
+                <div class="inputBx">
+                    <input type="submit" value="Sign in">
+                    <br />
+                    <div class="links">
+                        <a href="#">Forget Password</a>
+                        <a href="s-signup.html">Signup</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        // Add an event listener for form submission
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Fetch the email and password values
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            // Perform any necessary validation
+            // Here, you can add your validation logic if needed
+
+            // Redirect to the dashboard page
+            window.location.href = "std-dashboard.html";
+        });
+
+        // Add functionality for the back button
+        document.getElementById("backButton").addEventListener("click", function(event) {
+            event.preventDefault();
+            window.history.back();
+        });
+    </script>
 </body>
 
-
-
 </html>
-
-
-
