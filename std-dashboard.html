@@ -44,9 +44,30 @@
 
             // Dummy mentor data (replace this with actual mentor data)
             const mentors = [
-                { name: 'Mentor 1', profession: 'Software Engineer' },
-                { name: 'Mentor 2', profession: 'Machine Learning' },
-                { name: 'Mentor 3', profession: 'Web Developer' }
+                { 
+                    name: 'Mr.David', 
+                    profession: 'Software Engineer',
+                    qualification: 'Bachelor of Science in Computer Science',
+                    location: 'New York, USA',
+                    contact: '+1 123-456-7890',
+                    image: 'assets/mentor1.jpg'
+                },
+                { 
+                    name: 'Ms.Monica', 
+                    profession: 'Machine Learning Engineer',
+                    qualification: 'Master of Science in Artificial Intelligence',
+                    location: 'San Francisco, USA',
+                    contact: '+1 987-654-3210',
+                    image: 'assets/mentor2.jpg'
+                },
+                { 
+                    name: 'Mr.Albert', 
+                    profession: 'Web Developer',
+                    qualification: 'Bachelor of Technology in Computer Engineering',
+                    location: 'London, UK',
+                    contact: '+44 1234-567890',
+                    image: 'assets/mentor3.jpg'
+                }
             ];
 
             // Loop through the mentors array and create a card for each mentor
@@ -66,6 +87,7 @@
                 // Create contact button
                 const contactButton = document.createElement('button');
                 contactButton.textContent = 'Contact Mentor';
+                contactButton.onclick = () => displayMentorDetails(mentor); // Call function to display mentor details
 
                 // Append elements to mentor card
                 mentorCard.appendChild(mentorName);
@@ -75,6 +97,43 @@
                 // Append mentor card to mentors section
                 mentorsSection.appendChild(mentorCard);
             });
+        }
+
+        function displayMentorDetails(mentor) {
+            // Create modal overlay
+            const overlay = document.createElement('div');
+            overlay.classList.add('overlay');
+
+            // Create modal content
+            const modal = document.createElement('div');
+            modal.classList.add('modal');
+            modal.innerHTML = `
+                <img src="${mentor.image}" alt="${mentor.name}">
+                <h2>${mentor.name}</h2>
+                <p><strong>Profession:</strong> ${mentor.profession}</p>
+                <p><strong>Qualification:</strong> ${mentor.qualification}</p>
+                <p><strong>Location:</strong> ${mentor.location}</p>
+                <p><strong>Contact:</strong> ${mentor.contact}</p>
+                <button onclick="closeModal()">Close</button>
+                <button onclick="bookSession('${mentor.name}')">Book a Session</button>
+            `;
+
+            // Append modal to overlay
+            overlay.appendChild(modal);
+
+            // Append overlay to body
+            document.body.appendChild(overlay);
+        }
+
+        function closeModal() {
+            // Remove modal overlay
+            const overlay = document.querySelector('.overlay');
+            overlay.remove();
+        }
+
+        function bookSession(mentorName) {
+            // Replace this function with your booking logic
+            alert(`Booking session with ${mentorName}`);
         }
     </script>
 </body>
