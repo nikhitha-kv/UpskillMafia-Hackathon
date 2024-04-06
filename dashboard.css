@@ -113,7 +113,9 @@ main {
     box-shadow: 0 2px 4px rgba(255, 255, 255, 0.329);
     text-align: center;
 }
-
+#students-container :hover{
+    transform: scale(1.05);
+}
 .student-card h3 {
     margin-top: 0;
     color: #fff;
