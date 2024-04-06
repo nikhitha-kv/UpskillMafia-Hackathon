@@ -13,13 +13,14 @@
 </head>
 <body>
     <a href="index.html" style="position: absolute; top: 20px; right: 80px; color: #ffffff; text-decoration: none; z-index: 999;">Home</a>
+    <a href="#" id="backButton" style="position: absolute; top: 20px; right: 150px; color: #fff; text-decoration: none; z-index: 999;">Back</a>
+
     
-    <div class="video-container">
-      <video autoplay muted loop>
-          <source src="assets/bg.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-      </video>
-  </div>    <!--ring div starts here-->
+    <div class="image-container">
+      <img src="assets/sign-bg.jpg" alt="bg img">
+      Your browser does not support the video tag.
+</div> 
+    <!--ring div starts here-->
 <div class="ring">
   <i style="--clr:#00ff0a;"></i>
   <i style="--clr:#ff0057;"></i>
@@ -44,7 +45,15 @@
   </form>
   </div>
 </div>
-
+<script>
+  document.addEventListener("click", function(event) {
+    var backButton = document.getElementById("backButton");
+    if (event.target === backButton) {
+        event.preventDefault();
+        window.history.back();
+    }
+});
+</script>
 </body>
 
 

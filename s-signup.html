@@ -123,23 +123,23 @@ body {
   text-decoration: none;
 }
 /* Styles for the video container and blur effect */
-.video-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    filter: blur(5px); /* Apply blur effect to the video */
+.image-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  filter: brightness(40%);
 }
 
-.video-container video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    min-width: 100%;
-    min-height: 100%;
+.image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the entire container */
 }
 @media screen and (max-width: 768px) {
   /* Adjustments for smaller screens */
@@ -171,14 +171,13 @@ body {
 </head>
 <body>
     <a href="index.html" style="position: absolute; top: 20px; right: 80px; color: #fff; text-decoration: none; z-index: 999;">Home</a>
-    <a href="index.html" class="home-button">Home</a>
+    <a href="#" id="backButton" style="position: absolute; top: 20px; right: 150px; color: #fff; text-decoration: none; z-index: 999;">Back</a>
+
     
-    <div class="video-container">
-        <video autoplay muted loop>
-            <source src="assets/bg.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
+    <div class="image-container">
+      <img src="assets/sign-bg.jpg" alt="bg img">
+      Your browser does not support the video tag.
+</div> 
 
     <!--ring div starts here-->
 <div class="ring">
@@ -209,7 +208,15 @@ body {
   </div>
 </div>
 
-
+<script>
+  document.addEventListener("click", function(event) {
+    var backButton = document.getElementById("backButton");
+    if (event.target === backButton) {
+        event.preventDefault();
+        window.history.back();
+    }
+});
+</script>
 
 </body>
 </html>
