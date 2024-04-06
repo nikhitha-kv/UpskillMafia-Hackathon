@@ -1,53 +1,137 @@
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: rgb(34, 34, 34);
+    background-image: url('assets/sign-bg.jpg'); /* Path to your background image */
+    background-size: cover;
+    background-position: center;
 }
 
 header {
-    background-color: #007bff;
-    color: #fff;
+    position: relative; /* Set position relative */
+    z-index: 1; /* Ensure header stays on top */
+    background-color: rgba(10, 10, 10, 0.637); /* Dark background color with transparency */
+    color: #fff; /* White text color */
     padding: 20px;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile .icon {
+    margin-right: 10px;
+}
+
+.profile h1 {
+    margin: 0;
+    font-size: 1.2rem;
 }
 
 main {
+    position: relative; /* Set position relative */
+    z-index: 1; /* Ensure main content stays on top */
     padding: 20px;
 }
 
-section {
-    margin-bottom: 30px;
+.welcome-section {
+    text-align: center;
 }
 
-h1, h2 {
-    color: #333;
-}
-
-.profile-details {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 5px;
-}
-
-.actions ul {
-    list-style: none;
-    padding: 0;
-}
-
-.actions li {
+#doubt-box {
+    width: 100%;
+    height: 100px;
     margin-bottom: 10px;
+    background-color: rgba(201, 201, 201, 0.26); /* Background color with transparency */
+    color: #fff; /* Text color */
 }
 
-.actions a {
-    display: inline-block;
+#clear-doubt-btn {
+    background-color: #1f947b; /* Blue button color */
+    color: #fff; /* White text color */
+    border: none;
     padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    text-decoration: none;
     border-radius: 5px;
+    cursor: pointer;
 }
 
-.actions a:hover {
-    background-color: #0056b3;
+#clear-doubt-btn:hover {
+    background-color: #00b38c; /* Darker blue on hover */
+}
+
+.mentors-section {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.mentor-card {
+    background-color: #131313;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.329);
+    text-align: center;
+}
+
+.mentor-card h3 {
+    margin-top: 0;
+    color: #fff;
+}
+.mentor-card p{
+    color: #fff;
+}
+.mentor-card button {
+    background-color: #00fff2;
+    color: #030303;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.mentor-card button:hover {
+    background-color: #00b3b3;
+}
+
+
+#students-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.student-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.329);
+    text-align: center;
+}
+
+.student-card h3 {
+    margin-top: 0;
+    color: #fff;
+}
+
+.student-card p {
+    color: #fff;
+}
+
+#go-live-btn {
+    background-color: #209669; /* Blue button color */
+    color: #fff; /* White text color */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#go-live-btn:hover {
+    background-color: #00b38c; /* Darker blue on hover */
 }

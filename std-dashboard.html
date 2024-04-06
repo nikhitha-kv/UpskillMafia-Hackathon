@@ -6,36 +6,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
 <body>
     <header>
-        <h1>Welcome to Your Dashboard</h1>
+        <div class="settings">
+            <!-- Icon for settings -->
+            <div class="icon">
+                <i class="fas fa-cog"></i>
+            </div>
+        </div>
+        <h1>Student Dashboard</h1>
     </header>
     <main>
-        <section class="profile">
-            <h2>Your Profile</h2>
-            <div class="profile-details">
-                <!-- Placeholder content for profile details -->
-                <p>Name: John Doe</p>
-                <p>Email: john@example.com</p>
-                <p>Role: Student</p>
-            </div>
-        </section>
-        <section class="actions">
-            <h2>Actions</h2>
-            <ul>
-                <!-- Placeholder content for actions -->
-                <li><a href="#">View Mentors</a></li>
-                <li><a href="#">Schedule a Session</a></li>
-                <li><a href="#">View Past Sessions</a></li>
-                <!-- Add more actions as needed -->
-            </ul>
+        <section class="welcome-section">
+            <!-- Welcome message -->
+            <h2 style="color: white;">Hi! Welcome</h2>
+            <p style="color: white;">What's your doubt for today?</p>
+            <!-- Text box for writing doubt -->
+            <textarea id="doubt-box" placeholder="Write your doubt here..."></textarea>
+            <!-- Button to clear doubt -->
+            <button id="clear-doubt-btn" onclick="displayMentors()">Clear My Doubt</button>
+        </section><br/><br/>
+        <section class="mentors-section">
+            <!-- Mentors suited to clear doubts -->
+            <!-- Display mentors dynamically here based on user interaction -->
         </section>
     </main>
-    <footer>
-        <!-- Footer content -->
-    </footer>
+    <script>
+        function displayMentors() {
+            // Get the mentors-section element
+            const mentorsSection = document.querySelector('.mentors-section');
+
+            // Clear any existing mentor details
+            mentorsSection.innerHTML = '';
+
+            // Dummy mentor data (replace this with actual mentor data)
+            const mentors = [
+                { name: 'Mentor 1', profession: 'Software Engineer' },
+                { name: 'Mentor 2', profession: 'Machine Learning' },
+                { name: 'Mentor 3', profession: 'Web Developer' }
+            ];
+
+            // Loop through the mentors array and create a card for each mentor
+            mentors.forEach(mentor => {
+                // Create mentor card container
+                const mentorCard = document.createElement('div');
+                mentorCard.classList.add('mentor-card');
+
+                // Create mentor name element
+                const mentorName = document.createElement('h3');
+                mentorName.textContent = mentor.name;
+
+                // Create mentor profession element
+                const mentorProfession = document.createElement('p');
+                mentorProfession.textContent = mentor.profession;
+
+                // Create contact button
+                const contactButton = document.createElement('button');
+                contactButton.textContent = 'Contact Mentor';
+
+                // Append elements to mentor card
+                mentorCard.appendChild(mentorName);
+                mentorCard.appendChild(mentorProfession);
+                mentorCard.appendChild(contactButton);
+
+                // Append mentor card to mentors section
+                mentorsSection.appendChild(mentorCard);
+            });
+        }
+    </script>
 </body>
 
 </html>
