@@ -97,12 +97,57 @@
 
 <!-- Contact Section -->
 <section id="contact">
-    <div class="container">
-        <h2>Contact Us</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in magna sit amet odio varius scelerisque.</p>
-        <!-- Add contact form or other contact information -->
-    </div>
+  <div class="container">
+      <h2 style="text-align: center;">Contact Us</h2><br/>
+      <div class="contact-form">
+          <form id="contactForm" action="#" method="POST">
+              <div class="input-group">
+                  <input type="text" id="name" name="name" placeholder="Your Name" required>
+              </div>
+              <div class="input-group">
+                  <input type="email" id="email" name="email" placeholder="Your Email" required>
+              </div>
+              <div class="input-group">
+                  <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+              </div>
+              <button type="submit">Send Message</button>
+          </form>
+          <div class="feedback">
+              <h3>Feedback</h3>
+              <p>We value your feedback! Let us know how we can improve our services.</p>
+              <div class="input-group">
+                  <textarea id="feedback" name="feedback" placeholder="Your Feedback" rows="3"></textarea>
+              </div>
+              <button id="submitFeedback">Submit Feedback</button>
+          </div>
+      </div>
+  </div>
 </section>
+<footer>
+  <div class="container">
+      <div class="footer-content">
+          <div class="footer-section about">
+              <h3>About Us</h3>
+              <p>We are dedicated to providing mentorship and support for students to help them achieve their goals.</p>
+          </div>
+          <div class="footer-section links">
+              <h3>Quick Links</h3>
+              <ul>
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">Services</a></li>
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Contact</a></li>
+              </ul>
+          </div>
+          
+      </div>
+      <div class="footer-bottom">
+          &copy; 2024 Virtual Mentorship Hub | Designed by Nikhitha.K.V, Nikitha.R.G, Nilani.S
+      </div>
+  </div>
+</footer>
+
+
 </body>
 <script src="index.js">
   

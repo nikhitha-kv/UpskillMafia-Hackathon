@@ -267,9 +267,107 @@ nav .menu {
 
 
 /* Contact Section */
+/* Contact Section Styles */
 #contact {
+    padding: 80px 0;
+    background-color: #0f0f0f; /* Dark background color */
+    color: #fff; /* Text color */
+}
+
+.contact-form {
+    display: flex;
+    justify-content: center;
+}
+
+.contact-form form, .feedback {
+    max-width: 500px;
+    width: 100%;
+}
+
+.contact-form form {
+    margin-right: 20px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333; /* Dark input background color */
+    color: #fff; /* Input text color */
+}
+
+.input-group textarea {
+    resize: vertical;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff; /* Accent color */
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker accent color on hover */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: #fff;
     padding: 50px 0;
-    background-color: #f9f9f9;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
     text-align: center;
 }
+
+.footer-section {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-section.about p {
+    font-size: 14px;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    border-top: 1px solid #777;
+    padding-top: 20px;
+    font-size: 14px;
+    text-align: center;
+}
+
 
